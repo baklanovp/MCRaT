@@ -95,10 +95,16 @@ MCRaT injects photons into a hydrodynamic simulation of an outflow and calculate
 * The Klein–Nishina Cross Section Including the Effects of Polarization
 * Cyclo-synchrotron Emission and Absorption
 
-Once the MCRaT calculations have completed, users can construct mock observed light curves, spectra, and polarization measurements from the MCRaT results using the [ProcessMCRaT](https://github.com/parsotat/ProcessMCRaT) library. 
+Once the MCRaT calculations have completed, users can construct mock observed light curves, spectra, and polarization measurements from the MCRaT results using the [ProcessMCRaT](https://github.com/parsotat/ProcessMCRaT) package. 
 
-Currently, MCRaT works with FLASH hydrodynamic simulations and [PLUTO](http://plutocode.ph.unito.it/) AMR simulations, with both 2D spherical (r, &theta;) and 2D cartesian ((x,y) and (r,z)).
-<!-- for tex: https://stackoverflow.com/questions/35498525/latex-rendering-in-readme-md-on-github -->
+Currently, MCRaT can be used to analyze the output of FLASH and PLUTO hydrodynamic simulations in the specified dimensions and coordinate systems:
+* FLASH
+  - 2D: Cartesian and Cylindrical 
+* PLUTO (.dbl files only) and PLUTO-Chombo
+  - 2D/2.5D: Cartesian, Cylindrical, and Spherical
+  - 3D: Cartesian, Polar, and Spherical
+    
+Additionally, MCRaT can analyze PLUTO and PLUTO-Chombo magneto-hydrodynamic simulations in the same dimensions and coordinate systems specified above.
 
 ### Built With
 
@@ -123,7 +129,7 @@ The following are necessary to compile the MCRaT code and should be installed in
 * [The GNU Scientific Library (GSL)](https://www.gnu.org/software/gsl/)
 * [The HDF5 library](https://www.hdfgroup.org/solutions/hdf5/) -- need to install the serial and parallel versions (v1.10 and greater)
 
-In addition to the above, you will also need a hydrodynamical simulation that you want to calculate radiation from. Currently, this can be a FLASH or PLUTO-CHOMBO simulation in 2D cartesian ((x,y) and (r,z)) and 2D spherical (r, &theta;) coordinates.
+In addition to the above, you will also need a hydrodynamical simulation that you want to calculate radiation from. Currently, this can be a FLASH, PLUTO, or PLUTO-Chombo simulation with dimensions and coordinates previously specified.
 
 
 ### Installation
@@ -195,7 +201,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Tyler Parsotan - [Personal Website](https://http://sites.science.oregonstate.edu/~parsotat/) - parsotat@oregonstate.edu
+Tyler Parsotan - [Personal Website](https://asd.gsfc.nasa.gov/Tyler.Parsotan/) - parsotat@umbc.edu
 
 Project Link: [https://github.com/lazzati-astro/MCRaT](https://github.com/lazzati-astro/MCRaT)
 
